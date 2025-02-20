@@ -1,0 +1,10 @@
+/Assets/TutorialInfo
+/Library
+/obj
+*.csproj
+/Logs
+/ProjectSettings
+/UserSettings
+*.sln
+/.vs/LOGYST_Demo/FileContentIndex
+/.vs
