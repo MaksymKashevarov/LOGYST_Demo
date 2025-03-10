@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Crate
   weight: 5
-  carryIndex: 2
+  carryIndex: 1
+  objectPrefab: {fileID: 8822573082612667784, guid: 95c52a7320390e44d9462d5744a60255, type: 3}

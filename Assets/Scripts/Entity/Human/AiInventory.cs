@@ -12,11 +12,6 @@ public class AiInventory : Inventory
         this.inventory = inventory;
     }
 
-    public void Equip()
-    {
-        ItemData _rHand = inventory[0];
-    }
-
     public override void Refresh()
     {
         if (inventory != null && inventory.Count > 0)

@@ -10,14 +10,22 @@ public class HumanBT : Root
     [SerializeField] private List<Transform> _locations;
     private NavMeshAgent _agent;
     private Human _human;
+    private Hands _hands;
 
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
         _human = GetComponent<Human>();
-        if (_human is null)
+        _hands = _human.GetHands();
+
+        if (_human == null)
         {
             Debug.LogWarning("Couldn't load Human component!");
+        }
+
+        if (_hands == null)
+        {
+            Debug.LogWarning("Couldn't load Hands component!");
         }
     }
 
@@ -25,10 +33,9 @@ public class HumanBT : Root
     {
         Node root = new Sequence(new List<Node>
         {
-            new SphereScanNode(gameObject.transform.position, 25f, "Cargo",_locations, 1),
-            new MoveToNode(_locations, _agent),
-            new PickUpNode(_human, _agent)
-        });;
+
+        }
+        );
         return root;
     }
 }

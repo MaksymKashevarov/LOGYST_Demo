@@ -1,50 +1,50 @@
-using Entity.InventorySystem;
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Human : MonoBehaviour
 {
-    [SerializeField] private float _health;
     [SerializeField] private List<ItemData> _inventory;
-    [SerializeField] private int _maxInvSlots;
+    [Header("Hands")]
+    [SerializeField] private Dictionary<string, ItemData> hands = new Dictionary<string, ItemData>();
+    [Header("AI Configuration")]
+    //[SerializeField] private float _maxCarryWeight = 15f;
+    [SerializeField] private float _health;
+    //[SerializeField] private int _maxInvSlots;
     private AiInventory _aiInventory;
-    private float _rayDistance = 3f;
+    private Hands _hands;
 
-
-
-    private void Start()
+    private void Awake()
     {
         _inventory = new List<ItemData>();
         _aiInventory = new AiInventory(_inventory);
-    }
-
-    public void Interact()
-    {
-        RaycastHit hit;
-        float heightOffset = 1.0f;
-        float radius = 0.5f;
-
-        Vector3 startPoint = transform.position + Vector3.up * heightOffset;
-        Vector3 endPoint = transform.position - Vector3.up * heightOffset;
-
-        Debug.DrawRay(transform.position, transform.forward * _rayDistance, Color.red);
-
-        if (Physics.CapsuleCast(startPoint, endPoint, radius, transform.forward, out hit, _rayDistance))
+        hands = new Dictionary<string, ItemData>
         {
-            Iteractable _obj = hit.collider.GetComponent<Iteractable>();
-            if (_obj != null)
-            {
-                _obj.Pickup(_inventory);
-            }
+            { "RHand", null },
+            { "LHand", null }
+        };
+        _hands = new Hands(hands); 
+    }
+    public void PrintHands()
+    {
+        foreach (var pair in hands)
+        {
+            Debug.Log($"Рука: {pair.Key}, Предмет: {(pair.Value != null ? pair.Value.name : "Пусто")}");
         }
     }
+
+
 
     private void Update()
     {
         _aiInventory.Refresh();
+        PrintHands();
     }
 
-
+    public Hands GetHands()
+    {
+        return _hands;
+    }
 
 }
+

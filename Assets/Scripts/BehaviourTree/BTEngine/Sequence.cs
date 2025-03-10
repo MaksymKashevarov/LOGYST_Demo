@@ -20,7 +20,6 @@ namespace BehaviorTree
             }
 
             Node node = children[_currentIndex];
-            Debug.Log($"Sequence working with {node}");
 
             switch (node.Evaluate())
             {
