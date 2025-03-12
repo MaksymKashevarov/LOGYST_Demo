@@ -8,3 +8,6 @@
 *.sln
 /.vs/LOGYST_Demo/FileContentIndex
 /.vs
+/Assets/Scenes
+Assets/Scenes/AIBrainSystem.unity
+*.unity
