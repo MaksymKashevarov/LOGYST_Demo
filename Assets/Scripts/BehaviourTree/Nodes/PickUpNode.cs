@@ -8,9 +8,9 @@ namespace BehaviorTree.Nodes
 {
     public class PickUpNode : Node
     {
-        private Human human;
+        private ToDeleteOrRefactor human;
         private Hands hands;
-        public PickUpNode(Human human, Hands hands)
+        public PickUpNode(ToDeleteOrRefactor human, Hands hands)
         {
             this.human = human; 
             this.hands = hands;

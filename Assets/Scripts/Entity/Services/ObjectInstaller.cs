@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectInstaller : Installer
+public class ObjectInstaller : ToDeleteOrToRefactor
 {
     //[SerializeField] private ObjectPattern pattern;
     [SerializeField] private string patternKey;

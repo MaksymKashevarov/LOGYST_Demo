@@ -9,13 +9,13 @@ public class HumanBT : Root
 {
     [SerializeField] private List<Transform> _locations;
     private NavMeshAgent _agent;
-    private Human _human;
+    private ToDeleteOrRefactor _human;
     private Hands _hands;
 
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
-        _human = GetComponent<Human>();
+        _human = GetComponent<ToDeleteOrRefactor>();
         _hands = _human.GetHands();
 
         if (_human == null)

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Installer : MonoBehaviour
+public abstract class ToDeleteOrToRefactor : MonoBehaviour
 {
     protected abstract void InstallCharacter();
 }

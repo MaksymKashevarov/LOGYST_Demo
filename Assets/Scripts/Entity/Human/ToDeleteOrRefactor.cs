@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class Human : MonoBehaviour
+public class ToDeleteOrRefactor : MonoBehaviour
 {
     [SerializeField] private List<ItemData> _inventory;
     [Header("Hands")]
