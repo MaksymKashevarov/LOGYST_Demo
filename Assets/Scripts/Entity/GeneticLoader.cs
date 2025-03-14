@@ -1,15 +1,6 @@
 using UnityEngine;
 
-public class GeneticLoader : Creature
+public class GeneticLoader 
 {
-    private EntityModule module;
-    public override void Install()
-    {
-        Debug.Log("test");
-    }
 
-    public override void LoadFirst()
-    {
-        
-    }
 }
