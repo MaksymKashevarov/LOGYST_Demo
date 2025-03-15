@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class Installer : MonoBehaviour
 {
-    private Creature loader;
+    private Component loader;
 
-    protected void Start()
+    protected void Awake()
     {
         loader = SetupLoader();
         if (loader != null)
@@ -18,5 +18,5 @@ public abstract class Installer : MonoBehaviour
         }
     }
 
-    protected abstract Creature SetupLoader();
+    protected abstract Component SetupLoader();
 }

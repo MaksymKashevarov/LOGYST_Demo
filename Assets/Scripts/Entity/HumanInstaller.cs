@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HumanInstaller : Creature
+public class HumanInstaller : Component
 {
-    public HumanInstaller(List<Creature> components) : base(components){}
+    public HumanInstaller(List<Component> components) : base(components){}
 
     public override void Install()
     {

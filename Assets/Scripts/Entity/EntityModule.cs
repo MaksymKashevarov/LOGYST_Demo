@@ -5,19 +5,21 @@ using UnityEngine;
 public class EntityModule : Installer
 {
     [ShowInInspector]
-    private Dictionary<string, int> _attributes;
-    private List<Creature> list = new List<Creature>();
-
-    protected override Creature SetupLoader()
+    private List<Component> components = new List<Component>
     {
-        HumanInstaller humanInstaller = new HumanInstaller(
-            list);
-        return humanInstaller;
+        new GeneticInstaller(),
+    };
+
+    [ShowInInspector]
+    private Dictionary<string, int> _attributes = new Dictionary<string, int>();
+
+
+    protected override Component SetupLoader()
+    {
+        Component installer = new HumanInstaller(components);
+        return installer;
     }
 
-    private void Awake()
-    {
-        _attributes = new Dictionary<string, int>();
-    }
+
 
 }

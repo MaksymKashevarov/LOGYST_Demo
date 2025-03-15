@@ -2,16 +2,18 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Creature
+public class Component
 {
-    protected List<Creature> components = new List<Creature>();
+    protected List<Component> components = new List<Component>();
     public virtual void Install(){}
 
     public virtual void LoadFirst(){}
 
-    public Creature(List<Creature> components)
+    public Component() { }
+
+    public Component(List<Component> components)
     {
-        foreach(Creature comp in components) 
+        foreach(Component comp in components) 
         {
             this.components.Add(comp);
         }
