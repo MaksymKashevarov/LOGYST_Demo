@@ -11,10 +11,19 @@ public abstract class Installer : MonoBehaviour
         loader = SetupLoader();
         if (loader != null)
         {
-            Debug.Log("Loader Located Succesfully!");
-            loader.LoadFirst();
+            Debug.Log("(Preload) Loader Located Succesfully!");
+            loader.LoadFirst();            
+            Debug.Log("Preloaded Succesfull!");
+        }
+    }
+
+    protected void OnEnable()
+    {
+        if (loader != null)
+        {
+            Debug.Log("(Install) Loader Located Succesfully!");
             loader.Install();
-            Debug.Log("Loaded Succesfully!");
+            Debug.Log("Installed Succesfull!");
         }
     }
 

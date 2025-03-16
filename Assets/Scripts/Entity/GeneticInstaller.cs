@@ -3,14 +3,22 @@ using UnityEngine;
 
 public class GeneticInstaller : Component
 {
-    private readonly Dictionary<int, string> _attributes;
-    public override void Install()
+    private readonly Dictionary<string, int> _attributes;
+
+    /*public GeneticInstaller(Dictionary<string, int> _attributes)
     {
-        Debug.Log("Me Installed!");
+        this._attributes = _attributes;
     }
+    */
 
     public override void LoadFirst()
     {
         Debug.Log("Me Loaded First!");
     }
+
+    public override void Install()
+    {
+        Debug.Log("Me Installed!");
+    }
+
 }
